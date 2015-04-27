@@ -22,13 +22,19 @@ $(document).ready(function() {
 var value;
 	// Start the search here!
 	$("input").on("click", function (e) {
+		$(".mainList").empty();
 		value = $("#searchval").val();
 
 		search(value);
 		console.log(value);
 		e.preventDefault();
 	});
-	// search();
+	// $("#filterval").on("click", function (e) {
+	// 	 var input = $(this).val();
+
+	// 	console.log("input")
+	// 	e.preventDefault();
+	// });
 
 
 
