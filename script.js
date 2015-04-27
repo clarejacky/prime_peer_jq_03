@@ -6,30 +6,29 @@ var results;
 function searchCallback(results) {
     console.log(results);
     for(var i=0; i < 10; i++) {
-    	$(".mainList").append("<div id='" + results[i].id + "'class='col-md-6'>"+results[i].name+"</br><img src='"+results[i].image.icon_url+"'/></br><div id='game' class='col-md-6'>Description: "+results[i].description+"</br>Release Date: "+results[i].original_release_date+"</br>Platform: "+results[i].platforms[0].name+"</div></div>");
+    	$(".mainList").append("<div id='" + results[i].id + "'class='col-md-4'>"+results[i].name+"</br><img id='icon' src='"+results[i].image.icon_url+"'/></br><div id='game'>Description: "+results[i].description+"</br>Release Date: "+results[i].original_release_date+"</br>Platform: "+results[i].platforms[0].name+"</div></div>");
     	$(".mainList").on("click", "#"+results[i].id, function(){
+    	$(this).children().hide();
+    	$(this).siblings().children("#game").hide();
     	$(this).children().slideDown();
+
     	});
     	}
-    	// $(".mainList").append
     	
-    	/*}
-    	$("#"+results[i].id).on("click", function (){
-    		$("#game"+ results[i].id).slideDown("fast");
-    	});
-    	*/
-    	// console.log(results[i]);
 }
 
 $(document).ready(function() {
 
+var value;
 	// Start the search here!
-	// $("input").on("click", function () {
-	// 	var input = $('#searchval').attr('value');
-	// 	search(input);
-	// 	console.log(input);
-	// });
-	search("batman");
+	$("input").on("click", function (e) {
+		value = $("#searchval").val();
+
+		search(value);
+		console.log(value);
+		e.preventDefault();
+	});
+	// search();
 
 
 

@@ -1,3 +1,15 @@
  #game {
  	display: none;
  }
+
+ img {
+ 	width: 150px;
+ 	margin: 10px 0;
+
+ }
+ #icon {
+ 	width: 75px;
+ }
+ div {
+ 	margin: 20px 0;
+ }
